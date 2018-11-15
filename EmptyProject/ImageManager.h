@@ -24,8 +24,10 @@ public:
 	ImageManager();
 	virtual ~ImageManager();
 public:
-	void AddImage(string name, string route);
+	Texture *AddImage(string name, string route);
 	void DrawImage(string name, D3DXVECTOR2 pos, float rotation = 0.0f, float scale = 1.0f, Color color = {255, 255, 255, 255});
+	void DrawUI(string name, D3DXVECTOR2 pos, float rotation = 0.0f, float scale = 1.0f, Color color = { 255, 255, 255, 255 });
+	void DrawImage(Texture *tex, D3DXVECTOR2 pos, float rotation = 0.0f, float scale = 1.0f, Color color = { 255, 255, 255, 255 });
 };
 
 #define IMAGEMANAGER ImageManager::GetInstance()

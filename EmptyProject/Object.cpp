@@ -2,11 +2,13 @@
 #include "Object.h"
 
 
-Object::Object()
-{
-}
 
 
 Object::~Object()
 {
+}
+
+void Object::Draw()
+{
+	IMAGEMANAGER->DrawImage(texture, pos, rotation, scale, color);
 }

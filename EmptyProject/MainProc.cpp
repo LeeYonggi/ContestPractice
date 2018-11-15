@@ -1,5 +1,6 @@
 #include "DXUT.h"
 #include "MainProc.h"
+#include "InGameScene.h"
 
 
 MainProc::MainProc()
@@ -13,18 +14,19 @@ MainProc::~MainProc()
 
 void MainProc::Init()
 {
-	IMAGEMANAGER->AddImage("test", "./Resource/test.png");
+	SCENEMANAGER->ChangeScene(new InGameScene);
 }
 
 void MainProc::Update()
 {
+	SCENEMANAGER->Update();
 }
 
 void MainProc::Render()
 {
 	IMAGEMANAGER->sprite->Begin(D3DXSPRITE_ALPHABLEND);
 
-	IMAGEMANAGER->DrawImage("test", {640, 360});
+	SCENEMANAGER->Render();
 
 	IMAGEMANAGER->sprite->End();
 }
@@ -32,4 +34,7 @@ void MainProc::Render()
 void MainProc::Release()
 {
 	ImageManager::ReleaseInstance();
+	SceneManager::ReleaseInstance();
+	ObjectManager::ReleaseInstance();
+	CameraManager::ReleaseInstance();
 }

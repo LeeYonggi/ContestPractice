@@ -23,6 +23,30 @@
     <Filter Include="Object">
       <UniqueIdentifier>{a7dac4e3-bc9b-48a3-aa7f-b1fe016c6ed2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Manager\SceneManager">
+      <UniqueIdentifier>{33471171-15b8-4590-b05d-66581c0f4652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{3a254d40-ae4b-449f-aa38-5f588b908d25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\SceneBase">
+      <UniqueIdentifier>{46116674-5a84-4030-b0f3-d4246eb85e82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\InGameScene">
+      <UniqueIdentifier>{15033e5b-b0bd-47cf-b2f3-0d04a879342b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\CameraManager">
+      <UniqueIdentifier>{8994a832-8ffd-49fc-8ca5-a6e3209468e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\MonsterSpawner">
+      <UniqueIdentifier>{297379fe-81c9-4839-afa3-f1ce7e3e33fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Monster">
+      <UniqueIdentifier>{af7825df-2811-404c-bc42-c903df196baa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\BackGround">
+      <UniqueIdentifier>{f286c451-0be5-4fc3-b2b6-676a7d9b32b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DXUT\Core\DXUT.h">
@@ -82,6 +106,27 @@
     <ClInclude Include="Object.h">
       <Filter>Object</Filter>
     </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Scenes\SceneBase</Filter>
+    </ClInclude>
+    <ClInclude Include="InGameScene.h">
+      <Filter>Scenes\InGameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterSpawner.h">
+      <Filter>Object\MonsterSpawner</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>Manager\CameraManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Object\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>Object\BackGround</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EmptyProject.cpp" />
@@ -96,6 +141,27 @@
     </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Scenes\SceneBase</Filter>
+    </ClCompile>
+    <ClCompile Include="InGameScene.cpp">
+      <Filter>Scenes\InGameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterSpawner.cpp">
+      <Filter>Object\MonsterSpawner</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>Manager\CameraManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Object\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>Object\BackGround</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

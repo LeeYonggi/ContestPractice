@@ -4,6 +4,7 @@
 
 ObjectManager::ObjectManager()
 {
+	Init();
 }
 
 
@@ -29,7 +30,11 @@ void ObjectManager::Update()
 				_iter = iter.second->erase(_iter);
 			}
 			else
+			{
+				if((*_iter)->GetActive())
+					(*_iter)->Update();
 				++_iter;
+			}
 		}
 	}
 }
@@ -40,7 +45,8 @@ void ObjectManager::Render()
 	{
 		for (auto _iter : *iter.second)
 		{
-			_iter->Render();
+			if(_iter->GetActive())
+				_iter->Render();
 		}
 	}
 }
@@ -66,11 +72,15 @@ Object* ObjectManager::AddObject(OBJECT_STATE state, Object * obj)
 	if (iter == m_Object.end()) return nullptr;
 
 	iter->second->push_back(obj);
+	obj->Init();
 
 	return obj;
 }
 
 vector<Object*>* ObjectManager::GetObjects(OBJECT_STATE state)
 {
-	return nullptr;
+	auto iter = m_Object.find(state);
+	if (iter == m_Object.end()) return nullptr;
+
+	return iter->second;
 }

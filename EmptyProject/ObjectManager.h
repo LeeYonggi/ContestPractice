@@ -32,3 +32,4 @@ public:
 	vector<Object*> *GetObjects(OBJECT_STATE state);
 };
 
+#define OBJECTMANAGER ObjectManager::GetInstance()

@@ -73,6 +73,8 @@
 #include <math.h>      
 #include <limits.h>      
 #include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
 
 // CRT's memory leak detection
 #if defined(DEBUG) || defined(_DEBUG)

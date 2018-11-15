@@ -21,11 +21,11 @@ ImageManager::~ImageManager()
 	SAFE_RELEASE(sprite);
 }
 
-void ImageManager::AddImage(string name, string route)
+Texture *ImageManager::AddImage(string name, string route)
 {
 	auto iter = m_Texture.find(name);
 
-	if (iter != m_Texture.end()) return;
+	if (iter != m_Texture.end()) return nullptr;
 
 	Texture *texture = new Texture;
 	D3DXCreateTextureFromFileExA(DXUTGetD3D9Device(), route.c_str(),
@@ -34,9 +34,32 @@ void ImageManager::AddImage(string name, string route)
 		&texture->info, NULL, &texture->tex);
 
 	m_Texture.insert(make_pair(name, texture));
+	return texture;
 }
 
 void ImageManager::DrawImage(string name, D3DXVECTOR2 pos, float rotation, float scale, Color color)
+{
+	auto iter = m_Texture.find(name);
+	if (iter == m_Texture.end()) return;
+
+	D3DXMATRIX matWorld, matT, matR, matS;
+	D3DXMATRIX matCam;
+
+	D3DXMatrixScaling(&matS, scale, scale, 1);
+	D3DXMatrixRotationZ(&matR, rotation);
+	D3DXMatrixTranslation(&matT, pos.x, pos.y, 0);
+	D3DXMatrixTranslation(&matCam, CAMERAMANAGER->camPos.x, CAMERAMANAGER->camPos.y, 0);
+
+	matWorld = matS * matR * matT * matCam;
+
+	sprite->SetTransform(&matWorld);
+
+	D3DXVECTOR3 center = { (float)(iter->second->info.Width / 2),  (float)(iter->second->info.Height / 2), 0 };
+
+	sprite->Draw(iter->second->tex, nullptr, &center, nullptr, D3DCOLOR_RGBA(color.r, color.g, color.b, color.a));
+ }
+
+void ImageManager::DrawUI(string name, D3DXVECTOR2 pos, float rotation, float scale, Color color)
 {
 	auto iter = m_Texture.find(name);
 	if (iter == m_Texture.end()) return;
@@ -54,4 +77,23 @@ void ImageManager::DrawImage(string name, D3DXVECTOR2 pos, float rotation, float
 	D3DXVECTOR3 center = { (float)(iter->second->info.Width / 2),  (float)(iter->second->info.Height / 2), 0 };
 
 	sprite->Draw(iter->second->tex, nullptr, &center, nullptr, D3DCOLOR_RGBA(color.r, color.g, color.b, color.a));
- }
+}
+
+void ImageManager::DrawImage(Texture * tex, D3DXVECTOR2 pos, float rotation, float scale, Color color)
+{
+	D3DXMATRIX matWorld, matT, matR, matS;
+	D3DXMATRIX matCam;
+
+	D3DXMatrixScaling(&matS, scale, scale, 1);
+	D3DXMatrixRotationZ(&matR, rotation);
+	D3DXMatrixTranslation(&matT, pos.x, pos.y, 0);
+	D3DXMatrixTranslation(&matCam, CAMERAMANAGER->camPos.x, CAMERAMANAGER->camPos.y, 0);
+
+	matWorld = matS * matR * matT * matCam;
+
+	sprite->SetTransform(&matWorld);
+
+	D3DXVECTOR3 center = { (float)(tex->info.Width / 2),  (float)(tex->info.Height / 2), 0 };
+
+	sprite->Draw(tex->tex, nullptr, &center, nullptr, D3DCOLOR_RGBA(color.r, color.g, color.b, color.a));
+}
