@@ -1,3 +1,3 @@
-﻿  Monster.cpp
-c:\users\rl445\desktop\notebook\programming\technologyconteset\contestpractice\emptyproject\monster.cpp(35): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+﻿  MonsterSpawner.cpp
+c:\users\rl445\desktop\notebook\programming\technologyconteset\contestpractice\emptyproject\monsterspawner.cpp(22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   EmptyProject_2010.vcxproj -> C:\Users\rl445\Desktop\Notebook\Programming\TechnologyConteset\ContestPractice\EmptyProject\Debug\EmptyProject.exe
