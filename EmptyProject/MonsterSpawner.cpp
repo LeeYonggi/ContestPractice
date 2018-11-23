@@ -3,10 +3,15 @@
 #include "Monster.h"
 
 
+MonsterSpawner::MonsterSpawner(STAGE_STATE _stageKind)
+	: spawnPos({ 0, 0 })
+{
+	stageKind = _stageKind;
+}
+
 MonsterSpawner::MonsterSpawner()
 	: spawnPos({ 0, 0 })
 {
-	stageKind = STAGE1;
 }
 
 
@@ -40,12 +45,14 @@ void MonsterSpawner::Stage1Init()
 	{
 		float x = cos(D3DXToRadian(i + 90)) * 180;
 		float y = sin(D3DXToRadian(i + 90)) * 130;
-		v_MonsterPath.push_back({ 240 + x, 590 + y });
+		v_MonsterPath.push_back({ 240 + x, 480 + y });
 	}
+
+	v_MonsterPath.push_back({ 1250, 600 });
 
 	v_Monster[0]->SetMonsterPath(v_MonsterPath);
 	v_Monster[0]->SetActive(true);
-}
+} 
 
 void MonsterSpawner::Init()
 {

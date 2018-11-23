@@ -386,9 +386,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="InGameScene.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="MainProc.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MonsterSpawner.cpp" />
@@ -396,10 +398,15 @@
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Tower.cpp" />
+    <ClCompile Include="Tower01.cpp" />
+    <ClCompile Include="TowerTile.cpp" />
     <ClInclude Include="BackGround.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="InGameScene.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="MainProc.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MonsterSpawner.h" />
@@ -429,6 +436,9 @@
     <ClCompile Include="DXUT\Optional\DXUTsettingsdlg.cpp" />
     <ClCompile Include="DXUT\Optional\SDKmesh.cpp" />
     <ClCompile Include="DXUT\Optional\SDKmisc.cpp" />
+    <ClInclude Include="Tower.h" />
+    <ClInclude Include="Tower01.h" />
+    <ClInclude Include="TowerTile.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EmptyProject.cpp" />

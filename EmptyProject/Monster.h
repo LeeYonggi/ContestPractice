@@ -10,6 +10,7 @@ public:
 private:
 	vector<D3DXVECTOR2> v_MonsterPath;
 	int nowPath;
+	int hp;
 	float speed;
 	bool isMove;
 
@@ -22,5 +23,8 @@ public:
 	void MovePath();
 public:
 	void SetMonsterPath(vector<D3DXVECTOR2> monsterPath) { v_MonsterPath = monsterPath; }
+
+	void SetHp(int _hp) { hp = _hp; }
+	int GetHp() { return hp; }
 };
 

@@ -47,6 +47,21 @@
     <Filter Include="Object\BackGround">
       <UniqueIdentifier>{f286c451-0be5-4fc3-b2b6-676a7d9b32b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\TowerTile">
+      <UniqueIdentifier>{43373cbe-b10d-49d8-a5d9-41813ac5c358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\InputManager">
+      <UniqueIdentifier>{8dca212d-f5ba-4e2e-a10f-718bf6b5f590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Tower">
+      <UniqueIdentifier>{85c8841e-1b57-46e4-ab2c-56f0a0254620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Tower\Tower01">
+      <UniqueIdentifier>{0ec65fec-5c3c-4c38-bec6-996663878244}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Bullet">
+      <UniqueIdentifier>{60724437-a9e9-4f39-afc0-ee1c09105bde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DXUT\Core\DXUT.h">
@@ -127,6 +142,21 @@
     <ClInclude Include="BackGround.h">
       <Filter>Object\BackGround</Filter>
     </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Manager\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TowerTile.h">
+      <Filter>Object\TowerTile</Filter>
+    </ClInclude>
+    <ClInclude Include="Tower.h">
+      <Filter>Object\Tower</Filter>
+    </ClInclude>
+    <ClInclude Include="Tower01.h">
+      <Filter>Object\Tower\Tower01</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Object\Bullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EmptyProject.cpp" />
@@ -162,6 +192,21 @@
     </ClCompile>
     <ClCompile Include="BackGround.cpp">
       <Filter>Object\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Manager\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TowerTile.cpp">
+      <Filter>Object\TowerTile</Filter>
+    </ClCompile>
+    <ClCompile Include="Tower.cpp">
+      <Filter>Object\Tower</Filter>
+    </ClCompile>
+    <ClCompile Include="Tower01.cpp">
+      <Filter>Object\Tower\Tower01</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Object\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

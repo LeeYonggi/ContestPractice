@@ -3,6 +3,7 @@
 
 #include "BackGround.h"
 #include "MonsterSpawner.h"
+#include "TowerTile.h"
 
 float timeSpeed = 1.0f;
 
@@ -17,7 +18,8 @@ InGameScene::~InGameScene()
 
 void InGameScene::Init()
 {
-	OBJECTMANAGER->AddObject(OBJ_ENEMY, new MonsterSpawner());
+	OBJECTMANAGER->AddObject(OBJ_ENEMY, new MonsterSpawner(STAGE1));
+	OBJECTMANAGER->AddObject(OBJ_ENEMY, new TowerTile(STAGE1));
 	OBJECTMANAGER->AddObject(OBJ_BACK, new BackGround());
 }
 

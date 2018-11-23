@@ -20,6 +20,7 @@ void MainProc::Init()
 void MainProc::Update()
 {
 	SCENEMANAGER->Update();
+	INPUTMANAGER->Update();
 }
 
 void MainProc::Render()
@@ -37,4 +38,5 @@ void MainProc::Release()
 	SceneManager::ReleaseInstance();
 	ObjectManager::ReleaseInstance();
 	CameraManager::ReleaseInstance();
+	InputManager::ReleaseInstance();
 }

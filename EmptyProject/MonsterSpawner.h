@@ -1,17 +1,12 @@
 #pragma once
 #include "Object.h"
 
-enum STAGE_STATE
-{
-	STAGE1,
-	STAGE2,
-	STAGE3
-};
 class Monster;
 class MonsterSpawner :
 	public Object
 {
 public:
+	MonsterSpawner(STAGE_STATE _stageKind);
 	MonsterSpawner();
 	virtual ~MonsterSpawner();
 private:

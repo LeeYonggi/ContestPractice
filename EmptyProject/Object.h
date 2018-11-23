@@ -25,6 +25,11 @@ public:
 	virtual void Release()	= 0;
 
 public:
+	bool CircleCollision(Vector2 pos1, Vector2 pos2, float radius1, float radius2);
+	Vector2 TrackingPos(Object *obj);
+	float GetTargetAngle(Object *obj);
+
+public:
 	void SetPos(Vector2 vec2) { pos = vec2; }
 	Vector2 GetPosition() { return pos; }
 

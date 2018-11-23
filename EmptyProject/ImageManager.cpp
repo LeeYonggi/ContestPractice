@@ -25,7 +25,7 @@ Texture *ImageManager::AddImage(string name, string route)
 {
 	auto iter = m_Texture.find(name);
 
-	if (iter != m_Texture.end()) return nullptr;
+	if (iter != m_Texture.end()) return iter->second;
 
 	Texture *texture = new Texture;
 	D3DXCreateTextureFromFileExA(DXUTGetD3D9Device(), route.c_str(),
@@ -37,6 +37,21 @@ Texture *ImageManager::AddImage(string name, string route)
 	return texture;
 }
 
+vector<Texture*> ImageManager::AddAnimeImage(string route, int low, int size)
+{
+	vector<Texture*> vTempTex;
+
+	for (int i = low; i <= size; i++)
+	{
+		char ctr[128];
+		sprintf(ctr, route.c_str(), i);
+
+		vTempTex.push_back(AddImage(ctr, ctr));
+	}
+
+	return vTempTex;
+}
+
 void ImageManager::DrawImage(string name, D3DXVECTOR2 pos, float rotation, float scale, Color color)
 {
 	auto iter = m_Texture.find(name);
@@ -46,7 +61,7 @@ void ImageManager::DrawImage(string name, D3DXVECTOR2 pos, float rotation, float
 	D3DXMATRIX matCam;
 
 	D3DXMatrixScaling(&matS, scale, scale, 1);
-	D3DXMatrixRotationZ(&matR, rotation);
+	D3DXMatrixRotationZ(&matR, D3DXToRadian(rotation));
 	D3DXMatrixTranslation(&matT, pos.x, pos.y, 0);
 	D3DXMatrixTranslation(&matCam, CAMERAMANAGER->camPos.x, CAMERAMANAGER->camPos.y, 0);
 
@@ -67,7 +82,7 @@ void ImageManager::DrawUI(string name, D3DXVECTOR2 pos, float rotation, float sc
 	D3DXMATRIX matWorld, matT, matR, matS;
 
 	D3DXMatrixScaling(&matS, scale, scale, 1);
-	D3DXMatrixRotationZ(&matR, rotation);
+	D3DXMatrixRotationZ(&matR, D3DXToRadian(rotation));
 	D3DXMatrixTranslation(&matT, pos.x, pos.y, 0);
 
 	matWorld = matS * matR * matT;
@@ -85,7 +100,7 @@ void ImageManager::DrawImage(Texture * tex, D3DXVECTOR2 pos, float rotation, flo
 	D3DXMATRIX matCam;
 
 	D3DXMatrixScaling(&matS, scale, scale, 1);
-	D3DXMatrixRotationZ(&matR, rotation);
+	D3DXMatrixRotationZ(&matR, D3DXToRadian(rotation));
 	D3DXMatrixTranslation(&matT, pos.x, pos.y, 0);
 	D3DXMatrixTranslation(&matCam, CAMERAMANAGER->camPos.x, CAMERAMANAGER->camPos.y, 0);
 

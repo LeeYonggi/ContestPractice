@@ -1,7 +1,7 @@
 #pragma once
 #include "Singleton.h"
 
-#define OBJECT_SIZE 6 
+#define OBJECT_SIZE 7 
 enum OBJECT_STATE
 {
 	OBJ_BACK,
@@ -9,6 +9,7 @@ enum OBJECT_STATE
 	OBJ_TILE,
 	OBJ_ENEMY,
 	OBJ_TOWER,
+	OBJ_BULLET,
 	OBJ_UI
 };
 

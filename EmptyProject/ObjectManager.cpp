@@ -27,6 +27,8 @@ void ObjectManager::Update()
 		{
 			if ((*_iter)->GetDestroy())
 			{
+				SAFE_RELEASE(*_iter);
+				SAFE_DELETE(*_iter);
 				_iter = iter.second->erase(_iter);
 			}
 			else

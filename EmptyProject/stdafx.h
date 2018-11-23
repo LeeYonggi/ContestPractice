@@ -21,7 +21,10 @@ using namespace std;
 #include "Singleton.h"
 #include "CameraManager.h"
 #include "ImageManager.h"
+#include "InputManager.h"
 #include "Object.h"
 #include "ObjectManager.h"
 #include "SceneManager.h"
 #include "Scene.h"
+
+#include "InGameScene.h"
