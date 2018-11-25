@@ -8,6 +8,7 @@ Tower::Tower()
 	towerState = TOW_DEFAULT;
 	damage = 1;
 	shootDelay = 0.5f;
+	target = nullptr;
 }
 
 Tower::~Tower()

@@ -13,7 +13,7 @@ BackGround::~BackGround()
 
 void BackGround::Init()
 {
-	texture = IMAGEMANAGER->AddImage("Stage1Back", "./Resource/stage1/stage1.png");
+	texture = IMAGEMANAGER->AddImage("Stage1Back", "./Resource/stage1/Background.png");
 	pos = { SCREEN_X * 0.5f, SCREEN_Y * 0.5f };
 }
 

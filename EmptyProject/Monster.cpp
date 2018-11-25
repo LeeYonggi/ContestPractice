@@ -16,7 +16,7 @@ void Monster::Init()
 {
 	texture = IMAGEMANAGER->AddImage("testMonster", "./Resource/MonsterTest.png");
 	isMove = true;
-	speed = 100;
+	speed = 300;
 	nowPath = 0;
 }
 

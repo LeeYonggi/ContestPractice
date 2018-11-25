@@ -8,7 +8,7 @@ public:
 	virtual ~Tower01();
 
 private:
-	
+	float angle;
 
 public:
 	void Init()		override;
