@@ -20,7 +20,9 @@ protected:
 	Object *target;
 	TOWER_STATE towerState;
 	int damage;
+	float attackDelay;
 	float shootDelay;
+	bool isShoot;
 	vector<Texture*> vTexture;
 
 public:

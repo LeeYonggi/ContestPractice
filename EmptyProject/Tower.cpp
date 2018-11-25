@@ -9,6 +9,8 @@ Tower::Tower()
 	damage = 1;
 	shootDelay = 0.5f;
 	target = nullptr;
+	attackDelay = 0;
+	isShoot = false;
 }
 
 Tower::~Tower()
@@ -22,30 +24,7 @@ void Tower::Init()
 
 void Tower::Update()
 {
-	switch (towerState)
-	{
-	case TOW_DEFAULT:
-		TargetTracking();
-		break;
-	case TOW_ATTACK:
-		if (CircleCollision(pos, target->GetPosition(), 200, 1))
-		{
-			if (shootDelay < 0.0f)
-			{
-				Object *temp = OBJECTMANAGER->AddObject(OBJ_BULLET, new Bullet(target, 500, damage));
-				temp->SetPos(pos);
-				shootDelay = 0.5f;
-			}
-		}
-		else
-			towerState = TOW_DEFAULT;
-
-		if (shootDelay > 0.0f)
-			shootDelay -= ElTime;
-		break;
-	default:
-		break;
-	}
+	
 }
 
 void Tower::Render()
